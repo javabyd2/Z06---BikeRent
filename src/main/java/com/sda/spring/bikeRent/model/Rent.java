@@ -1,7 +1,17 @@
 package com.sda.spring.bikeRent.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 
 @Entity
 public class Rent {
@@ -9,8 +19,8 @@ public class Rent {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Date startDate;
-    private Date endDate;
+    private Timestamp startDate;
+    private Timestamp endDate;
     private double price;
 
     @Enumerated(EnumType.STRING)
