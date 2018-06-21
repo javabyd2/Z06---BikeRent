@@ -1,9 +1,9 @@
 package com.sda.spring.bikeRent.repository;
 
 import com.sda.spring.bikeRent.model.User;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends CrudRepository<User,Long> {
+public interface UserRepository extends JpaRepository<User,Long> {
 
     public User findByuserName(String userName);
 
