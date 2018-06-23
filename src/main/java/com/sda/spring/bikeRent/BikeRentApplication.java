@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguratio
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
-@EnableWebMvc
 public class BikeRentApplication extends WebMvcAutoConfiguration {
 
 	public static void main(String[] args) {
