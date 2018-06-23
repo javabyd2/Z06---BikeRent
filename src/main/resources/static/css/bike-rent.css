@@ -120,14 +120,12 @@ p {
 }
 
 #tm-section-1 {	
-	background-image: url('../static/img/main-img.jpg');
+	background-image: url('../img/main-img.jpg');
 	height: 515px;
 }
 
-#tm-section-5 { background-image: url('../static/img/bg-img-2.jpg'); }
-
 #tm-section-6 {
-	background-image: url('../static/img/main-img-2.jpg');
+	background-image: url('../img/main-img-2.jpg');
 	background-position: top center;
 	padding-top: 120px;
 	padding-bottom: 60px;
