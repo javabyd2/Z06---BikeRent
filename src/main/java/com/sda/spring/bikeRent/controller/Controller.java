@@ -3,7 +3,6 @@ package com.sda.spring.bikeRent.controller;
 import com.sda.spring.bikeRent.model.User;
 import com.sda.spring.bikeRent.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 @RestController
-public class Controler {
+public class Controller {
 
     @Autowired
     private UserService userService;
@@ -47,4 +46,6 @@ public class Controler {
         }
         return modelAndView;
     }
+
+
 }
