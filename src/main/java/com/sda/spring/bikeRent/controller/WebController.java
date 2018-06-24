@@ -19,24 +19,24 @@ public class WebController {
         this.userService = userService;
     }
 
-    @GetMapping(value = "/addUser")
-    public ModelAndView addUser(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("user",new User());
-        modelAndView.setViewName("addUser");
-        return modelAndView;
-    }
-
     @PostMapping(value = "addUser")
     public ModelAndView saveUser(User user, BindingResult bindingResult){
         ModelAndView modelAndView = new ModelAndView();
         if (bindingResult.hasErrors()){
-            modelAndView.setViewName("register");
+            modelAndView.setViewName("signup");
         }else {
             userService.saveUser(user);
             modelAndView.addObject("successMessage","Successfully added user");
         }
         modelAndView.setViewName("addUser");
+        return modelAndView;
+    }
+
+    @GetMapping(value = "/signup")
+    public ModelAndView signup() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("user",new User());
+        modelAndView.setViewName("signup");
         return modelAndView;
     }
 }
