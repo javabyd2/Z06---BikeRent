@@ -12,7 +12,6 @@ import java.sql.Timestamp;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
 @Entity
 public class Rent {
 

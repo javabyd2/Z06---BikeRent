@@ -1,13 +1,17 @@
 package com.sda.spring.bikeRent.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Bike {
 
     @Id
@@ -17,13 +21,4 @@ public class Bike {
 
     @Enumerated(EnumType.STRING)
     private BikeType bikeType;
-
-    public Bike() {
-    }
-
-    public Bike(String bikeName, BikeType bikeType) {
-        this.bikeName = bikeName;
-        this.bikeType = bikeType;
-    }
-
 }
