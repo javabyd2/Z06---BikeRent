@@ -1,13 +1,19 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Form</title>
+</head>
+<body>
 <div class="user">
     <header class="user__header">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt=""/>
         <h1 class="user__title">Login</h1>
     </header>
     <script>
         const button = document.querySelector('.btn')
-        const form   = document.querySelector('.form')
+        const form = document.querySelector('.form')
 
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             form.classList.add('form--no')
         });
     </script>
@@ -81,6 +87,7 @@
             outline: 0;
             transition: 0.3s;
         }
+
         .form__input:focus {
             background: #f7f7f7;
         }
@@ -97,6 +104,7 @@
             background: #ABA194;
             transition: 0.3s;
         }
+
         .btn:hover {
             background: #a09486;
         }
@@ -130,6 +138,7 @@
                 transform: translate3d(10px, 0, 0);
             }
         }
+
         @-webkit-keyframes arrive {
             0% {
                 opacity: 0;
@@ -142,6 +151,7 @@
                 transform: translate3d(0, 0, 0);
             }
         }
+
         @keyframes arrive {
             0% {
                 opacity: 0;
@@ -154,6 +164,7 @@
                 transform: translate3d(0, 0, 0);
             }
         }
+
         @-webkit-keyframes move {
             0% {
                 background-position: 0 0;
@@ -165,6 +176,7 @@
                 background-position: 0 0;
             }
         }
+
         @keyframes move {
             0% {
                 background-position: 0 0;
@@ -177,15 +189,16 @@
             }
         }
     </style>
-    <form class="form">
+    <form class="form" th:action="@{/signup}" method="get">
         <div class="form__group">
-            <input type="text" placeholder="Username" class="form__input" />
+            <input type="text" placeholder="Username" class="form__input"/>
         </div>
 
         <div class="form__group">
-            <input type="password" placeholder="Password" class="form__input" />
+            <input type="password" placeholder="Password" class="form__input"/>
         </div>
 
-        <button class="btn" type="button">Sign Up</button>
+        <button class="btn" type="submit">Login</button>
     </form>
 </div>
+</body>
