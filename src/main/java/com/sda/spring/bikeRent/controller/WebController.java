@@ -31,12 +31,4 @@ public class WebController {
         modelAndView.setViewName("addUser");
         return modelAndView;
     }
-
-    @GetMapping(value = "/signup")
-    public ModelAndView signup() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("user",new User());
-        modelAndView.setViewName("signup");
-        return modelAndView;
-    }
 }
