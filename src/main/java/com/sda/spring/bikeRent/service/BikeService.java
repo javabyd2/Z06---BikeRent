@@ -1,5 +1,6 @@
 package com.sda.spring.bikeRent.service;
 
+import com.sda.spring.bikeRent.exceptions.BikeNotFoundException;
 import com.sda.spring.bikeRent.model.Bike;
 import com.sda.spring.bikeRent.repository.BikeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,9 @@ public class BikeService {
         return bikeRepository.findAll();
     }
 
-    public Bike getBikeById(Long id){
-        return bikeRepository.findById(id).get();
+    public Bike getBikeById (Long id){
+        Bike bike = bikeRepository.findById(id).orElseThrow(() -> new BikeNotFoundException(id));
+        return bike;
     }
 
     public void deleteBike(Long id){
@@ -39,6 +41,7 @@ public class BikeService {
         editingBike.setBikeType(editingBike.getBikeType());
         save(editingBike);
     }
+
 
 
 }
