@@ -22,7 +22,7 @@ public class BikeService {
         return bikeRepository.save(bike);
     }
 
-    public List<Bike> getBike(){
+    public List<Bike> getBikes(){
         return bikeRepository.findAll();
     }
 

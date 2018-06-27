@@ -22,7 +22,7 @@ public class RentService {
         return rentRepository.save(rent);
     }
 
-    public List<Rent> getRent(){
+    public List<Rent> getRents(){
         return rentRepository.findAll();
     }
 
