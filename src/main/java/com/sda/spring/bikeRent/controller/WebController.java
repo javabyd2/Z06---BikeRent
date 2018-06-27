@@ -74,6 +74,15 @@ public class WebController {
         return modelAndView;
     }
 
+    //
+    @GetMapping(value = "/addBike")
+    public ModelAndView addBike() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("bike", new Bike());
+        modelAndView.setViewName("addBike");
+        return modelAndView;
+    }
+
     @DeleteMapping(value = "/addBike/{id}")
     public String deleteBike(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
         bikeService.deleteBike(id);
