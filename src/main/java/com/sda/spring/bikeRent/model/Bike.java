@@ -12,12 +12,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "bikes")
 public class Bike {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String bikeName;
+    private double price;
 
     @Enumerated(EnumType.STRING)
     private BikeType bikeType;
