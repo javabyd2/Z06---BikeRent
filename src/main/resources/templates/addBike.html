@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Bike Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container" style="background: white; width: 40%; opacity: 0.9;">
+    <form autocomplete="off" action="#" th:action="@{/addBike}" th:object="${bike}" method="post" class="form-horizontal" role="form">
+        <h2 class="form-signin-heading">Dodaj rower</h2>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label th:if="${#fields.hasErrors('bikeName')}" th:errors="*{bikeName}"
+                       class="validation-message"></label>
+                <input type="text" th:field="*{bikeName}" placeholder="Nazwa roweru"
+                       class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label th:if="${#fields.hasErrors('bikeType')}" th:errors="*{bikeType}"
+                       class="validation-message"></label>
+                <input type="text" th:field="*{bikeType}" placeholder="Typ roweru"
+                       class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label th:if="${#fields.hasErrors('price')}" th:errors="*{price}"
+                       class="validation-message"></label>
+                <input type="text" th:field="*{price}" placeholder="Cena"
+                       class="form-control"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary btn-block">Dodaj rower</button>
+            </div>
+        </div>
+        <span th:utext="${successMessage}"></span>
+    </form>
+</div>
+</body>
+</html>
