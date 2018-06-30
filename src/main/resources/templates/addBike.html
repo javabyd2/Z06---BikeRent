@@ -14,18 +14,21 @@
         <h2 class="form-signin-heading">Dodaj rower</h2>
         <div class="form-group">
             <div class="col-sm-12">
-                <label th:if="${#fields.hasErrors('bikeName')}" th:errors="*{bikeName}"
-                       class="validation-message"></label>
-                <input type="text" th:field="*{bikeName}" placeholder="Nazwa roweru"
-                       class="form-control"/>
+                <label th:if="${#fields.hasErrors('bikeName')}" th:errors="*{bikeName}" class="validation-message"></label>
+                <input type="text" th:field="*{bikeName}" placeholder="Nazwa roweru" class="form-control"/>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-12">
-                <label th:if="${#fields.hasErrors('bikeType')}" th:errors="*{bikeType}"
-                       class="validation-message"></label>
-                <input type="text" th:field="*{bikeType}" placeholder="Typ roweru"
-                       class="form-control"/>
+                <select class="form-control tm-select" type="text" th:field="*{bikeType}">
+                    <option value="ROAD_BIKE">ROAD_BIKE</option>
+                    <option value="ELECTRIC_BIKE">ELECTRIC_BIKE</option>
+                    <option value="CITY_BIKE">CITY_BIKE</option>
+                    <option value="MTB_BIKE">MTB_BIKE</option>
+                    <option value="BIKE_WITH_TRAILER">BIKE_WITH_TRAILER</option>
+                    <option value="BIKE_WITH_CHILD_SEAT">BIKE_WITH_CHILD_SEAT</option>
+                    <option value="BIKE_WITH_BASKET">BIKE_WITH_BASKET</option>
+                </select>
             </div>
         </div>
         <div class="form-group">

@@ -30,6 +30,7 @@ public class WebController {
         this.userService = userService;
     }
 
+    // User Mapping //
     @GetMapping(value = "/addUser")
     public ModelAndView addUser() {
         ModelAndView modelAndView = new ModelAndView();
@@ -61,6 +62,7 @@ public class WebController {
         return modelAndView;
     }
 
+    // Bike Mapping //
     @PostMapping(value = "/addBike")
     public ModelAndView addBike(Bike bike, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
@@ -74,22 +76,31 @@ public class WebController {
         return modelAndView;
     }
 
-    //
     @GetMapping(value = "/addBike")
     public ModelAndView addBike() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("bike", new Bike());
+        modelAndView.addObject("bikesList",bikeService.getBikes());
         modelAndView.setViewName("addBike");
         return modelAndView;
     }
 
-    @DeleteMapping(value = "/addBike/{id}")
+    @DeleteMapping(value = "/bikes/{id}")
     public String deleteBike(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
         bikeService.deleteBike(id);
         redirectAttributes.addFlashAttribute("successMessage", "Bike deleted");
         return "redirect:/bikes";
     }
 
+    @GetMapping(value = "/bikes")
+    public ModelAndView bikes(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("bikesList",bikeService.getBikes());
+        modelAndView.setViewName("bikes");
+        return modelAndView;
+    }
+
+    // Rent Mapping //
     @PostMapping(value = "/addRent")
     public ModelAndView addRent(Rent rent, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
