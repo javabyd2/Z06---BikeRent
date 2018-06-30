@@ -56,8 +56,8 @@ public class WebController {
     public ModelAndView search() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("bikesList", bikeService.getBikes());
-//        modelAndView.addObject("bikesId", bikeService.getBikeById());
-//        modelAndView.addObject("bikesPrice", bikeService.());
+//        modelAndView.addObject("bikesId", bikeService.getBikeById(id)());
+//        modelAndView.addObject("bikesPrice", bikeService.(id));
         modelAndView.setViewName("search");
         return modelAndView;
     }

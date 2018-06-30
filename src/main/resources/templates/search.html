@@ -110,32 +110,35 @@
     <div class="tbl-content">
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
-            <tr th:each="book: ${bikesList}"}>
-            </tr>
             <tr>
-                <td>0000</td>
-                <td>City Bike</td>
-                <td>$5</td>
-                <td>$15</td>
-                <td>$50</td>
+            <tr th:each="bike: ${bikesList}"}>
+                <td th:text="${bike.id}"> </td>
+                <td th:text="${bike.bikeName}"> </td>
+                <td th:text="${bike.bikeType}"> </td>
+                <td th:text="${bike.price}"> </td>
                 <td><div id="btn">
                     <button class="btn" th:href="@{rentForm}">Rent</button>
                 </div></td>
-                <!--<td th:text="${bike.getId}"> </td>-->
-                <!--<td th:text="${bike.getPrice}"> </td>-->
-                <!--<td th:text="${bike.getPrice}"> </td>-->
-
-
             </tr>
-            <tr>
-                <td>0001</td>
-                <td>Mountain Bike</td>
-                <td>$6</td>
-                <td>$18</td>
-                <td>$60</td>
-                <td><div id="btn">
-                    <button class="btn" th:href="@{rentForm}">Rent</button>
-                </div></td>
+// rowery dopisane z ręki w celu prezentacji
+                <!--<td>0000</td>-->
+                <!--<td>City Bike</td>-->
+                <!--<td>$5</td>-->
+                <!--<td>$15</td>-->
+                <!--<td>$50</td>-->
+                <!--<td><div id="btn">-->
+                    <!--<button class="btn" th:href="@{rentForm}">Rent</button>-->
+                <!--</div></td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>0001</td>-->
+                <!--<td>Mountain Bike</td>-->
+                <!--<td>$6</td>-->
+                <!--<td>$18</td>-->
+                <!--<td>$60</td>-->
+                <!--<td><div id="btn">-->
+                    <!--<button class="btn" th:href="@{rentForm}">Rent</button>-->
+                <!--</div></td>-->
             </tr>
 
             </tbody>
